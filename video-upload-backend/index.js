@@ -3,9 +3,11 @@ const cors = require('cors');
 const multer = require('multer');
 const { BlobServiceClient } = require('@azure/storage-blob');
 const { v4: uuidv4 } = require("uuid");
+const dotenv = require('dotenv').config();
 
+dotenv.config();
 // Azure Storage configuration
-const AZURE_STORAGE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=azureblobb111;AccountKey=O7zBUJ0VKbggWFZgf56J/2cEZWJy3ujWqFS9D6NDpTriG8lEaKOtKNjJGdMzxFAf/kDRd05AMUPu+ASt17Fw1g==;EndpointSuffix=core.windows.net';
+const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
   const CONTAINER_NAME = 'new';
 
 
